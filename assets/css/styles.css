@@ -1,0 +1,73 @@
+:root {
+  --white-color: #ffffff;
+  --dark-color: #3c4144;
+  --grey-color: #868d94;
+  --blue-color: #63befe;
+  --pink-color: #f8a0c8;
+  --red-color: #cf3f3f;
+}
+body {
+  margin: 0;
+  color: var(--white-color);
+}
+
+.header {
+  position: sticky;
+  background: var(--grey-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Hide the links inside the nav menu except for h1 */
+.header .my-links {
+  display: none;
+}
+
+.header a h1 {
+  order: 2;
+}
+
+.header a.icon {
+  background-color: black;
+  display: block;
+}
+
+.header a:hover {
+  color: var(--dark-color);
+}
+
+.active {
+  color: white;
+}
+
+i {
+  background: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* new beats section style begin */
+.new-beats {
+  background-image: url("../images/banner.jpg");
+}
+
+.beat-content {
+  display: flex;
+}
+.beat-img {
+  padding: 3rem;
+}
+.beat-img img {
+  width: 100%;
+  height: 40vh;
+  outline: 3px solid var(--white-color);
+  border-radius: 20%;
+}
+.beat-img img:hover {
+  opacity: 0.8;
+}
