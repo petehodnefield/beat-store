@@ -1,19 +1,28 @@
-function myFunction() {
-    var x = document.getElementById("myLinks")
-    if(x.style.display === "block") {
-        x.style.display = "none";
-    }
-    else {
-        x.style.display = "block"
-    }
+var iceMountain = document.querySelector("#ice-mountain-audio");
+var january = document.querySelector("#january-audio");
+var buyBtn = document.querySelector(".buy-btn")
+var dummyContainer = document.querySelector("#dummy-container")
+
+let hamburgerMenuEl = document.querySelector(".hamburger")
+let rotatedHamburgerMenuEl = document.querySelector(".rotated-hamburger")
+let navItemsContainerEl = document.querySelector(".nav-links-container")
+
+function playIceMountain() {
+    iceMountain.play();
+}
+function playJanuary() {
+    january.play();
 }
 
-var beatImgEl = document.querySelector(".beat-img");
-var beatImgElTwo = document.querySelector(".beat-img-two");
-
-
-var alertMe = function() {
-    window.alert("Hello World");
+let showMenuItems = function() {
+    console.log(navItemsContainerEl)
+    navItemsContainerEl.classList.remove("hidden")
+    hamburgerMenuEl.classList.add("rotated-hamburger")
 }
 
-beatImgElTwo.addEventListener("mouseover", alertMe)
+let hideMenuItems = function() {
+    rotatedHamburgerMenuEl.classList.remove("rotated-hamburger")
+}
+
+hamburgerMenuEl.addEventListener("click", showMenuItems)
+rotatedHamburgerMenuEl.addEventListener("click", hideMenuItems)
