@@ -15,7 +15,7 @@ let showMenuItems = function() {
     else {
         navItemsContainerEl.style.display = "block"
         hamburgerMenuEl.style.transform = 'rotate(90deg)'
-        hamburgerMenuEl.style.transition = '.5s';
+                hamburgerMenuEl.style.transition = '.5s';
 
     }
     navItemsContainerEl.classList.remove("hidden")

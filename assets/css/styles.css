@@ -23,9 +23,12 @@ body {
   font-family: 'Lato', sans-serif;
   color: var(--white-color);
   font-size: 1.5rem;
-  display: flex;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
 
 h2 {
   font-size: 4.5rem;
@@ -39,6 +42,10 @@ h3 {
 
 
 /* header style begin */
+.header-container {
+  display: flex;
+  
+}
 header {
   background: linear-gradient(270deg, rgba(180,224,255,1) 0%, rgba(99,190,254,1) 100%); 
   background: rgb(180,224,255);
@@ -47,12 +54,18 @@ header {
   flex-wrap: wrap;  
   justify-content: center;
   align-items: center;
-  padding:  0;
-  position: relative;
-  top: 0;
+
   width: 100%;
   height: 100px;
   flex-wrap: nowrap;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -76,6 +89,8 @@ h1 {
   fill: white;
   opacity: .8;
 }
+
+
 
 /* Navigation Links Style Begin */
 .nav-links-container {
@@ -114,11 +129,6 @@ a {
   padding: .2rem 5rem;
 }
 
-
-
-
-
-
 h1:hover {
   color: rgb(180,224,255);
   color: linear-gradient(270deg, rgba(180,224,255,1) 0%, rgba(99,190,254,1) 100%);  -webkit-text-stroke: #63befe;
@@ -129,7 +139,77 @@ h1:hover {
   color: var(--white-color);
 }
 
-
-
-
 /* header style end */
+
+/* About me style begin */
+.about-me {
+  background-color: var(--lightred-color);
+  text-align: center;
+  width: 100%;
+}
+
+.beat-img {
+  width: 50%;
+  height: auto;
+  border-radius: 100%;
+  border: 3px solid var(--white-color);
+}
+
+.beat-img:hover {
+  opacity: .9;
+}
+
+/* Button style */
+.btn {
+  padding: .4rem 0;
+  width: 11rem;
+  border: none;
+  border-radius: 15px;
+  font-size: 2rem;
+
+}
+
+.btn-primary {
+  color: var(--white-color);
+  background: var(--lightred-color);
+}
+
+.home-return {
+  font-size: 2.5rem;
+}
+
+/* Button/Links style end */
+
+/* Footer style begin */
+footer {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-color);
+}
+
+.footer-header {
+  font-size: 4rem;
+}
+
+footer ul, footer li {
+  padding: 0;
+}
+
+footer li {
+  text-align: left;
+}
+
+.contact-links {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.contact-links:hover {
+  color: var(--blue-color) ;
+}
+
+.copyright {
+  text-align: right;
+  margin-right: 3rem;
+}

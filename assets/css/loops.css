@@ -1,0 +1,46 @@
+h1 {
+    font-size: 6rem;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin: 1rem 0 0;
+}
+
+.loop-btn {
+   
+    position: absolute;
+    right: 15px;
+    top: 40px;
+}
+
+/* Loop videos style */
+.loop-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--dark-color);
+    text-align: center;
+}
+
+.loop-videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    margin: 2rem;
+    flex-basis: 100px ;
+    border: 3px solid var(--white-color);
+    
+}
+
+.iframe {
+    width: auto;
+    border-radius: 10px;
+}
