@@ -28,6 +28,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
+  text-shadow: var(--text-shadow-default);
 }
 
 h2 {
@@ -143,9 +144,10 @@ h1:hover {
 
 /* About me style begin */
 .about-me {
-  background-color: var(--lightred-color);
+  background-color: var(--dark-color);
   text-align: center;
   width: 100%;
+  height: 10000px;
 }
 
 .beat-img {
@@ -178,22 +180,45 @@ h1:hover {
   font-size: 2.5rem;
 }
 
+.audio-controls {
+  background: none;
+  border: none;
+  font-size: 40px;
+}
+
+.audio-controls:hover {
+  cursor: pointer;
+  opacity: .9;
+}
+
 /* Button/Links style end */
 
 /* Footer style begin */
 footer {
   text-align: center;
-  width: 100%;
-  height: 100%;
-  background-color: var(--dark-color);
+  background-color: var(--blue-color);
 }
 
 .footer-header {
   font-size: 4rem;
+  padding-top: 1.5rem;
+  text-shadow: 0px 0px 2px  var(--dark-color);
+
 }
 
 footer ul, footer li {
   padding: 0;
+}
+
+.socials-list {
+  display: flex;
+  width: auto;
+  justify-content: space-around;
+  padding: 1.5rem 1rem 0;
+}
+
+.socials {
+  font-size: 45px;
 }
 
 footer li {
@@ -206,10 +231,16 @@ footer li {
 }
 
 .contact-links:hover {
-  color: var(--blue-color) ;
+  opacity: .85;
 }
 
 .copyright {
-  text-align: right;
+  text-align: center;
+  font-size: 2rem;
   margin-right: 3rem;
+  margin-top: .4rem;
+  text-shadow: 0px 0px 1px  var(--dark-color);
+
 }
+
+
