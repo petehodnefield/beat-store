@@ -176,6 +176,11 @@ h1:hover {
   background: var(--lightred-color);
 }
 
+.btn:hover {
+  opacity: .9;
+  cursor: pointer;
+}
+
 .home-return {
   font-size: 2.5rem;
 }
@@ -189,6 +194,16 @@ h1:hover {
 .audio-controls:hover {
   cursor: pointer;
   opacity: .9;
+}
+
+.download-btn {
+  margin-bottom: 2rem;
+}
+
+
+
+.download-btn-container {
+  display: flex;
 }
 
 /* Button/Links style end */
