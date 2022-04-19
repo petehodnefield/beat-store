@@ -41,6 +41,10 @@ h3 {
   font-size: 3rem;
 }
 
+.hidden {
+  display: none;
+}
+
 
 /* header style begin */
 .header-container {
@@ -259,3 +263,37 @@ footer li {
 }
 
 
+/* Modal Styling begin */ 
+.modal {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 60%;
+  border: 10px solid var(--white-color);
+  border-radius: 10px;
+  margin: auto;
+  overflow: auto;
+  background-color: var(--grey-color);
+}
+
+.modal-list {
+  list-style: disc;
+}
+
+.modal-list-item {
+  font-size: 2.3rem;
+  text-align: left;
+  padding: .4rem 1rem;
+}
+
+.close {
+  font-size: 7rem;
+}
+
+.close:hover {
+  cursor: pointer;
+  color: var(--dark-color);
+}

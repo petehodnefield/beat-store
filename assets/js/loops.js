@@ -9,24 +9,49 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var player;
 
-function startplayer() 
-{
- player = document.querySelector('.music-player');
- console.dir(player)
- player.controls = false;
+$(".play-button").on("click", function() {
+    player.play()
+    console.log($(this))
+    $(this).addClass("hidden")
+    $(this).siblings().removeClass("hidden")
+
+})
+
+$(".pause-button").on("click", function() {
+    player.pause()
+    $(this).addClass("hidden")
+    $(this).siblings().removeClass("hidden")
+})
+
+function startplayer() {
+    player = document.querySelector('.music-player');
+    console.dir(player)
+    player.controls = false;
 }
 
-function playAudio() 
-{
- player.play();
-} 
-function pauseAudio() 
-{
- player.pause();
-}
-function stopAudio() 
-{
- player.pause();
- player.currentTime = 0;
-}
+// Modal functionality
+$(".download-btn").on("click", function() {
+    console.log($(this))
+    let sibling = $(this).siblings(".modal")
+    sibling.removeClass("hidden")
+    console.log(sibling)
+})
 
+$(".close").on("click", function() {
+    $(".modal").addClass("hidden")
+})
+
+
+// function stopAudio() {
+//     player.pause();
+//     player.currentTime = 0;
+// }
+
+
+
+
+// function playAudio() {  
+//     console.log($(this))  
+//     player.play();
+//     playButtonEl.classList.add("hidden")
+// } 

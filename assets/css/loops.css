@@ -55,7 +55,6 @@ h2 {
 
 .card {
     margin: 2rem;
-    flex-basis: 100px ;
     border: 3px solid var(--dark-color);
     align-items: center;
     background-color: var(--white-color);
@@ -99,4 +98,16 @@ h2 {
 }
 .wrapper .card-p {
     margin-bottom: .8rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .loop-pack-container {
+        flex-direction: row;
+        flex-basis: 3;
+    }
+
+    .card {
+        height: 50%;
+        width: 20%;
+    }
 }
