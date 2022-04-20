@@ -10,24 +10,9 @@ h2 {
     padding: 2rem 0 1rem;
 }
 
-.loop-btn {
-   
-    position: absolute;
-    right: 15px;
-    top: 40px;
-}
+
 
 /* Loop videos style */
-.loop-section {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: var(--dark-color);
-    text-align: center;
-}
 
 .loop-videos {
     display: flex;

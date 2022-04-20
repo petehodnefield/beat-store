@@ -185,6 +185,12 @@ h1:hover {
   cursor: pointer;
 }
 
+.home-return-btn {
+  position: absolute;
+  right: 15px;
+  top: 40px;
+}
+
 .home-return {
   font-size: 2.5rem;
 }
@@ -337,6 +343,14 @@ footer li {
 
 }
 
+
+.song-prod-img {
+  max-width: 60%;
+  border: 3px solid var(--white-color);
+  border-radius: 20px;
+
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -345,4 +359,15 @@ footer li {
 }
 .wrapper .card-p {
   margin-bottom: .8rem;
+}
+
+.body-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--dark-color);
+  text-align: center;
 }
