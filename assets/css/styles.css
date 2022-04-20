@@ -51,6 +51,12 @@ h3 {
   display: flex;
   
 }
+
+.head {
+  background-color: var(--dark-color);
+  position: relative;
+  height: 500px;
+}
 header {
   background: linear-gradient(270deg, rgba(180,224,255,1) 0%, rgba(99,190,254,1) 100%); 
   background: rgb(180,224,255);
@@ -61,7 +67,7 @@ header {
   align-items: center;
 
   width: 100%;
-  height: 100px;
+  height: 200px;
   flex-wrap: nowrap;
 }
 
@@ -75,9 +81,13 @@ header {
 
 h1 {
   font-weight: bold;
-  font-size: 10rem;
+  font-size: 6rem;
   text-shadow: var(--text-shadow-default);
   padding-left: 2rem;
+}
+
+.nav-links-row {
+  display: none;
 }
 
 .hamburger {
@@ -100,7 +110,7 @@ h1 {
 /* Navigation Links Style Begin */
 .nav-links-container {
   display: none;
-  background: pink;
+  background: var(--lightred-color);
   height: 100vh;
   width: 100%;
   order: -1;
@@ -119,7 +129,7 @@ li {
 }
 
 a h1 {
-  font-size: 4rem;
+  font-size: 5rem;
 }
 a {
   font-size: 4rem;
@@ -222,6 +232,7 @@ h1:hover {
 footer {
   text-align: center;
   background-color: var(--blue-color);
+  width: 100%;
 }
 
 .footer-header {
@@ -370,4 +381,30 @@ footer li {
   flex-wrap: wrap;
   background-color: var(--dark-color);
   text-align: center;
+}
+
+
+@media screen and (min-width: 768px) {
+  .head {
+    flex-direction: row;
+  }
+  .hamburger {
+    display: none;
+  }
+  .nav-links-row {
+    display: flex;
+    padding: 0;
+    width: 100%;
+    justify-content: end;
+  }
+  .menu-links-a {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+  .hi {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+  }
 }
