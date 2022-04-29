@@ -14,7 +14,7 @@
 
 ## License
 
-![MIT](https://img.shields.io/npm/l/mit-license)
+[![MIT](https://img.shields.io/npm/l/mit-license)](./license/MIT_license.md)
 
 ## Languages Used:
 
