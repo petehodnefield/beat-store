@@ -1,29 +1,41 @@
+let playerEl = document.querySelector(".player")
+let playButtonEl = document.querySelector(".play-button")
+let pauseButtonEl = document.querySelector(".pause-button")
+let stopButtonEl = document.querySelector(".stop-button")
+document.addEventListener("DOMContentLoaded", function() { 
+    startplayer(); 
+}, false);
 
-var dummyContainer = document.querySelector("#dummy-container")
+var player;
 
-let hamburgerMenuEl = document.querySelector(".hamburger")
-let navItemsContainerEl = document.querySelector(".nav-links-container")
+$(".play-button").on("click", function() {
+    player.play()
+    console.log($(this))
+    $(this).addClass("hidden")
+    $(this).siblings().removeClass("hidden")
 
+})
 
-let showMenuItems = function() {
-    if(navItemsContainerEl.style.display === "block") {
-        navItemsContainerEl.style.display = "none"
-        hamburgerMenuEl.style.transform = 'rotate(180deg)';
-        hamburgerMenuEl.style.transition = '.5s';
+$(".pause-button").on("click", function() {
+    player.pause()
+    $(this).addClass("hidden")
+    $(this).siblings().removeClass("hidden")
+})
 
-    }
-    else {
-        navItemsContainerEl.style.display = "block"
-        hamburgerMenuEl.style.transform = 'rotate(90deg)'
-                hamburgerMenuEl.style.transition = '.5s';
-
-    }
-    navItemsContainerEl.classList.remove("hidden")
-    hamburgerMenuEl.classList.add("rotated-hamburger")
+function startplayer() {
+    player = document.querySelector('.music-player');
+    console.dir(player)
+    player.controls = false;
 }
 
-let hideMenuItems = function() {
-    rotatedHamburgerMenuEl.classList.remove("rotated-hamburger")
-}
+// Modal functionality
+$(".download-btn").on("click", function() {
+    console.log($(this))
+    let sibling = $(this).siblings(".modal")
+    sibling.removeClass("hidden")
+    console.log(sibling)
+})
 
-hamburgerMenuEl.addEventListener("click", showMenuItems)
+$(".close").on("click", function() {
+    $(".modal").addClass("hidden")
+})
