@@ -1,0 +1,22 @@
+{
+    "progressions": [
+      {
+        "id": "0",
+        "name": "VI- V IV V",
+        "genres": ["trap", "pop", "RnB"],
+        "tempos": "any"
+      },
+      {
+        "id": "0",
+        "name": "VI- V IV IV",
+        "genres": ["trap", "pop", "RnB"],
+        "tempos": "any"
+      },
+      {
+        "id": "0",
+        "name": "VI- V III- IV",
+        "genres": ["trap"],
+        "tempos": "any"
+      }
+    ]
+}
