@@ -167,6 +167,14 @@ h1:hover {
   width: 100%;
 }
 
+.beat-store-link {
+  background: var(--cadet-grey);
+  padding: .6rem 5rem;
+  border-radius: 20px;
+  border: 3px solid var(--madder-lake);
+
+}
+
 .beat-img {
   width: 50%;
   height: auto;
@@ -488,6 +496,12 @@ footer li {
     align-items: center;
     flex-direction: column;
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 958px) {
+  .loop-pack-container {
+    flex-direction: row;
   }
 }
 

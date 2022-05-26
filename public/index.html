@@ -24,6 +24,23 @@
     </header>
         <!-- Loops section begin -->
     </div>
+    <!-- Beatstore link -->
+    <div class="section-container">
+      <a href="./beat-store.html">
+        <h2 class="beat-store-link">Beat Store</h2>
+        <article class="card">
+
+              <div class="img-container">
+                <img
+                  class="loop-pack-img"
+                  src="./assets/images/gorilla-hero-img.jpg"
+                  alt=""
+                />
+              </div>
+        </article>
+      </a>
+    </div>
+    <!-- loop pack section begin -->
       <div class="section-container">
         <section class="loop-packs">
           <h2>Free Loop Packs:</h2>
@@ -269,10 +286,15 @@
            <!-- Form begin -->
            <div class="form-wrapper">
             <h2>Let's Work</h2>
-              <form action="" class="loop-request">
+              <form action="" id="contact-me-for-work" class="loop-request">
+                <select class="form-input" name="work-type" form="contact-me-for-work" id="">
+                  <option  value="" disabled selected>Work Type</option>
+                  <option value="loops">Loops</option>
+                  <option value="mixing-mastering">Mixing/Mastering</option>
+                  <option value="production">Production</option>
+                </select>
                 <input class="form-input" type="name" placeholder="Your Name">
                 <input class="form-input" type="email" placeholder="Email Address">
-                <input class="form-input" type="url" placeholder="Reference Track">
                 <button class="btn submit-btn" type="submit">Submit</button>
               </form>
           </div>
