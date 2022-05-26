@@ -150,27 +150,14 @@ function obtainModalInfo() {
                 packName = classList
                 packDestination = `https://www.dropbox.com/sh/ino2pomljenf4sh/AADdrBHBBjNzDo7HbtSkPiQJa?dl=0`
             }
-            // console.dir(siblings[i].childNodes[1].attributes[1].textContent)
             const childInfo = this.children[0]
         }
         else {
         }
     }   
-
-    // const activePack = siblings.forEach(element => {
-    //     console.log(element)
-    // })
     displayModal(packDestination, packName)
 }
-// Modal functionality
-$(".download-btn").on("click", function() {
-    console.dir($(this))
-    // let sibling = $(this).siblings(".modal")
-    // sibling.removeClass("hidden")
-    // console.log(sibling)
-    displayModal()
 
-})
 
 pauseButtonEl.addEventListener('click', pauseAudio)
 downloadBtnEl.addEventListener('click', obtainModalInfo)

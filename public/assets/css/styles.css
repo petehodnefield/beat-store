@@ -568,7 +568,7 @@ footer li {
   background: none;
   z-index: 2;
   border: none;
-  font-size: 30rem;
+  font-size: 10rem;
   top: 50%;
 
   transform: translateY(-50%);
