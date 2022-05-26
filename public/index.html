@@ -41,7 +41,7 @@
       </a>
     </div>
  <!-- CAROUSEL BEGIN -->
- <section aria-label="Loop Packs">
+ <section class="carousel-section" aria-label="Loop Packs">
    <div class="carousel" data-carousel>
      <button class=" carousel-btn prev" data-carousel-button="prev">
        <ion-icon name="chevron-back-circle-outline"></ion-icon>
@@ -49,15 +49,20 @@
      <button class=" carousel-btn next" data-carousel-button="next">
       <ion-icon name="chevron-forward-circle-outline"></ion-icon>
      </button>
+     <button class="pause-btn play-btn pause hidden">
+      <ion-icon  name="pause-outline"></ion-icon>
+    </button>
+     <button class=" play-btn play" data-play-button="play">
+      <ion-icon name="play-circle-outline"></ion-icon>     </button>
      <ul data-packs>
        <li class="pack" data-active="">
-         <img src="./assets/images/discord-weekly-img.jpg" alt="Loop Pack 1">
+         <img class="discord-weekly-pack pack-img" src="./assets/images/discord-weekly-img.jpg" alt="Loop Pack 1">
        </li>
        <li class="pack">
-         <img src="./assets/images/gorilla-hero-img.jpg" alt="Loop Pack 2">
+         <img class="gorilla-hero-pack pack-img" src="./assets/images/gorilla-hero-img.jpg" alt="Loop Pack 2">
        </li>
        <li class="pack">
-         <img src="./assets/images/beat-img.jpg" alt="Loop Pack 3">
+         <img class="beat-img-pack pack-img"src="./assets/images/beat-img.jpg" alt="Loop Pack 3">
        </li>
      </ul>
    </div>
@@ -85,7 +90,7 @@
               <div class="wrapper">
                 <p class="card-p">Preview this pack:</p>
                 <div class="player">
-                  <audio class="music-player" src="./assets/audio/ice.mp3"></audio>
+                  <audio class="music-player" src=""></audio>
                   <button class="play-button audio-controls">
                     <ion-icon  name="play-outline"></ion-icon>
                   </button>

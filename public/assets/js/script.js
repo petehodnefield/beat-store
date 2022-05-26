@@ -1,9 +1,42 @@
 let playerEl = document.querySelector(".player")
 let playButtonEl = document.querySelector(".play-button")
-let pauseButtonEl = document.querySelector(".pause-button")
+const pauseButtonEl = document.querySelector(".pause-btn")
 let stopButtonEl = document.querySelector(".stop-button")
+const musicPlayer = document.querySelector('.music-selector')
 
 const carouselButtons = document.querySelectorAll("[data-carousel-button]")
+const playButton = document.querySelector("[data-play-button]")
+
+
+
+playButton.addEventListener('click', () => {
+    let audioClip;
+    const activePack = document.querySelector("[data-active]")
+    console.log(activePack)
+    const yaya = activePack.querySelector('.pack-img')
+    if(yaya.classList.contains('gorilla-hero-pack') ){
+        audioClip = `./assets/audio/ice.mp3`
+        startplayer(audioClip)
+    }
+    else if(yaya.classList.contains('discord-weekly-pack') ){
+        audioClip = `./assets/audio/january.mp3`
+        startplayer(audioClip)
+    }
+    else if(yaya.classList.contains('beat-img-pack') ){
+        audioClip = `./assets/audio/world.mp3`
+        startplayer(audioClip)
+    }
+    else{
+        console.log(yaya)
+    }
+})
+function startplayer(yaya) {
+    player = document.querySelector('.music-player');
+    player.setAttribute('src', yaya)
+    console.dir(player)
+    player.controls = false;
+    playAudio()
+}
 
 carouselButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -19,15 +52,31 @@ carouselButtons.forEach(button => {
 
         packs.children[newIndex].dataset.active = true
         delete activePack.dataset.active
+        pauseAudio()
     })
 })
-document.addEventListener("DOMContentLoaded", function() { 
-    startplayer(); 
-}, false);
 
 var player;
 
-$(".play-button").on("click", function() {
+function playAudio(yaya) {
+    // Remove hidden from the pause button
+    pauseButtonEl.classList.remove('hidden')
+    playButton.classList.add('hidden')
+
+    player.play()
+    console.log($(this))
+    $(this).addClass("hidden")
+    $(this).siblings().removeClass("hidden")
+}
+
+function pauseAudio() {
+    pauseButtonEl.classList.add('hidden')
+    playButton.classList.remove('hidden')
+    player.pause()
+}
+
+playButtonEl.addEventListener("click", function(yaya) {
+    startplayer(yaya)
     player.play()
     console.log($(this))
     $(this).addClass("hidden")
@@ -35,17 +84,8 @@ $(".play-button").on("click", function() {
 
 })
 
-$(".pause-button").on("click", function() {
-    player.pause()
-    $(this).addClass("hidden")
-    $(this).siblings().removeClass("hidden")
-})
 
-function startplayer() {
-    player = document.querySelector('.music-player');
-    console.dir(player)
-    player.controls = false;
-}
+
 
 // Modal functionality
 $(".download-btn").on("click", function() {
@@ -58,3 +98,5 @@ $(".download-btn").on("click", function() {
 $(".close").on("click", function() {
     $(".modal").addClass("hidden")
 })
+
+pauseButtonEl.addEventListener('click', pauseAudio)
