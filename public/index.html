@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>MongaMonga</title>
   </head>
-  <body>
+  <body class="body">
     <!-- Header style begin -->
     <header class="head">
       <!-- Hamburger -->
@@ -43,17 +43,22 @@
  <!-- CAROUSEL BEGIN -->
  <section class="carousel-section" aria-label="Loop Packs">
    <div class="carousel" data-carousel>
+     <!-- next/previous buttons -->
      <button class=" carousel-btn prev" data-carousel-button="prev">
        <ion-icon name="chevron-back-circle-outline"></ion-icon>
       </button>
      <button class=" carousel-btn next" data-carousel-button="next">
       <ion-icon name="chevron-forward-circle-outline"></ion-icon>
      </button>
-     <button class="pause-btn play-btn pause hidden">
+     <!-- Play/pause buttons -->
+     <button class="pause-btn  pause hidden">
       <ion-icon  name="pause-outline"></ion-icon>
     </button>
      <button class=" play-btn play" data-play-button="play">
-      <ion-icon name="play-circle-outline"></ion-icon>     </button>
+      <ion-icon name="play-circle-outline"></ion-icon>     
+    </button>
+    <!-- Download button -->
+    <button class="download-btn download">Download</button>
      <ul data-packs>
        <li class="pack" data-active="">
          <img class="discord-weekly-pack pack-img" src="./assets/images/discord-weekly-img.jpg" alt="Loop Pack 1">
