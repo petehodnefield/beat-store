@@ -1,22 +1,21 @@
-let playerEl = document.querySelector(".player")
 const pauseButtonEl = document.querySelector(".pause-btn")
-const playButtonEl = document.querySelector("[data-play-button]")
-let stopButtonEl = document.querySelector(".stop-button")
+const playButtonEl = document.querySelector("[data-play-loopButton]")
+const playProdButtonEl = document.querySelector("[data-play-prodButton]")
 const musicPlayer = document.querySelector('.music-selector')
 const downloadBtnEl = document.querySelector('.download-btn')
 const body = document.querySelector('.body')
 const carouselSectionEl = document.querySelector('.carousel-section')
 
-const carouselButtons = document.querySelectorAll("[data-carousel-button]")
+const carouselLoopButtons = document.querySelectorAll("[data-carousel-loopButton]")
+const carouselButtons = document.querySelectorAll("[data-carousel-loopButton]")
 
 const closeIconEl = document.querySelector('close')
 
 
-
+// Play loop
 playButtonEl.addEventListener('click', () => {
     let audioClip;
     const activePack = document.querySelector("[data-active]")
-    console.log(activePack)
     const yaya = activePack.querySelector('.pack-img')
     if(yaya.classList.contains('gorilla-hero-pack') ){
         audioClip = `./assets/audio/ice.mp3`
@@ -34,8 +33,29 @@ playButtonEl.addEventListener('click', () => {
         console.log(yaya)
     }
 })
+
+playProdButtonEl.addEventListener('click', () => {
+    let audioClip;
+    const activePack = document.querySelector("[data-active-prod]")
+    console.dir(activePack)
+    const yaya = activePack.querySelector('.pack-img')
+    console.dir(yaya)
+    if(yaya.classList.contains('aquarius') ){
+        audioClip = `./assets/audio/prod/aquarius.mp3`
+        console.log('hello')
+        startProdPlayer(audioClip)
+    }
+    
+})
 function startplayer(yaya) {
-    player = document.querySelector('.music-player');
+    player = document.querySelector('.loop-music-player');
+    player.setAttribute('src', yaya)
+    console.dir(player)
+    player.controls = false;
+    playAudio()
+}
+function startProdPlayer(yaya) {
+    player = document.querySelector('.prod-music-player');
     player.setAttribute('src', yaya)
     console.dir(player)
     player.controls = false;
@@ -98,6 +118,7 @@ function displayModal(packDestination, packName) {
 
     // Modal rules Info
     const modalRulesInfo = document.createElement('p')
+    modalRulesInfo.classList.add('rules')
     modalRulesInfo.textContent = 'You must contact me if you place any of these loops. DM me on Instagram @mongamonga_ or email me @mongamongabeats@gmail.com.'
 
     // Modal download link

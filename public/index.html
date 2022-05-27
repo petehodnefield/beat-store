@@ -24,43 +24,33 @@
     </header>
         <!-- Loops section begin -->
     </div>
-    <!-- Beatstore link -->
-    <div class="section-container">
-      <a href="./beat-store.html">
-        <h2 class="beat-store-link">Beat Store</h2>
-        <article class="card">
-
-              <div class="img-container">
-                <img
-                  class="loop-pack-img"
-                  src="./assets/images/gorilla-hero-img.jpg"
-                  alt=""
-                />
-              </div>
-        </article>
-      </a>
-    </div>
- <!-- CAROUSEL BEGIN -->
+   
+ <!-- LOOOP CAROUSEL BEGIN -->
  <section class="carousel-section" aria-label="Loop Packs">
    <div class="carousel" data-carousel>
+     <!-- Loop section header -->
+     <h2 class="carousel-header">Loops</h2>
+     <!-- Audio element to handle audio files -->
+    <audio class="loop-music-player" src=""></audio>
+
      <!-- next/previous buttons -->
-     <button class=" carousel-btn prev" data-carousel-button="prev">
+     <button class=" carousel-btn prev" data-carousel-loopButton="prev">
        <ion-icon name="chevron-back-circle-outline"></ion-icon>
       </button>
-     <button class=" carousel-btn next" data-carousel-button="next">
+     <button class=" carousel-btn next" data-carousel-loopButton="next">
       <ion-icon name="chevron-forward-circle-outline"></ion-icon>
      </button>
      <!-- Play/pause buttons -->
      <button class="pause-btn  pause hidden">
       <ion-icon  name="pause-outline"></ion-icon>
     </button>
-     <button class=" play-btn play" data-play-button="play">
+     <button class=" play-btn play" data-play-loopButton="play">
       <ion-icon name="play-circle-outline"></ion-icon>     
     </button>
     <!-- Download button -->
     <button class="download-btn download">Download</button>
      <ul data-packs>
-       <li class="pack" data-active="">
+       <li class="pack" data-active-loop="">
          <img class="discord-weekly-pack pack-img" src="./assets/images/discord-weekly-img.jpg" alt="Loop Pack 1">
        </li>
        <li class="pack">
@@ -72,251 +62,44 @@
      </ul>
    </div>
  </section>
- <!-- CAROUSEL END -->
-
-    <!-- loop pack section begin -->
-      <div class="section-container">
-        <section class="loop-packs">
-          <h2>Free Loop Packs:</h2>
-          <div class="loop-pack-container">
-            <!-- Discord Weeklies Pack -->
-            <article class="card discord-weeklies">
-              <h3>Discord Weeklies</h3>
-              <div class="img-container">
-                <img
-                  class="loop-pack-img"
-                  src="./assets/images/discord-weekly-img.jpg"
-                  alt=""
-                />
-              </div>
-              <p class="card-p">
-                Includes over 15 loops with stems, all of which are royalty free
-              </p>
-              <div class="wrapper">
-                <p class="card-p">Preview this pack:</p>
-                <div class="player">
-                  <audio class="music-player" src=""></audio>
-                  <button class="play-button audio-controls">
-                    <ion-icon  name="play-outline"></ion-icon>
-                  </button>
-                  <button class="pause-button audio-controls hidden">
-                    <ion-icon  name="pause-outline"></ion-icon>
-                  </button>
-                </div>
-    
-                <button class="btn-primary download-btn">Download</button>
-    
-                <!-- Modal -->
-                <div class="modal hidden">
-                  <div class="modal-content">
-                    <span class="close">&times</span>
-                    <h3 class="modal-text">
-                      You are agreeing to these rules if you use these loops:
-                    </h3>
-                    <ul class="modal-list">
-                      <li class="modal-list-item">
-                        You must contact me if you place any of these loops. DM me
-                        on Instagram @mongamonga_ or email me @
-                        mongamongabeats@gmail.com.
-                      </li>
-                      <li class="modal-list-item">
-                        I must be credited for anything that is uploaded/posted
-                        using these loops. This includes:
-                        <ul>
-                          <li class="modal-list-item">
-                            A collaborator on BeatStars/
-                          </li>
-                          <li class="modal-list-item">
-                            Tagged @mongamonga_ in the description wherever the
-                            beat/song gets posted
-                          </li>
-                          <li class="modal-list-item">
-                            Added as a collaborator when the song gets uploaded
-                            through a distributor. I won't take any of the revenues,
-                            I only require that I'm added as a collaborator.
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <a
-                      class="download-btn-container"
-                      href="https://www.dropbox.com/sh/83wumqlotz5yiy3/AABL5DAO-sbjg9k8mjrQwsc7a?dl=0"
-                      download="discord-weeklies"
-                      >Download Discord Weeklies(Legacy) Here
-                    </a>
-                  </div>
-                </div>
-                <!-- Modal end -->
-              </div>
-            </article>
-            <!-- Discord Weekly end -->
-            <!-- Gorilla Hero  Pack -->
-            <article class="card gorilla-hero">
-              <h3>Gorilla Hero</h3>
-              <div class="img-container">
-                <img
-                  class="loop-pack-img"
-                  src="./assets/images/gorilla-hero-img.jpg"
-                  alt=""
-                />
-              </div>
-              <p class="card-p">
-                Includes over 15 loops with stems, <br> all of which are royalty free
-              </p>
-              <div class="wrapper">
-                <p class="card-p preview-this">Preview this pack:</p>
-                <div class="player">
-                  <audio
-                    class="music-player"
-                    src="./assets/audio/january.mp3"
-                  ></audio>
-                  <button class="play-button audio-controls">
-                    <ion-icon name="play-outline"></ion-icon>
-                  </button>
-                  <button class="pause-button audio-controls hidden">
-                    <ion-icon name="pause-outline"></ion-icon>
-                  </button>
-                </div>
-    
-                <button class="btn-primary download-btn">Download</button>
-    
-                <!-- Modal -->
-                <div class="modal hidden">
-                  <div class="modal-content">
-                    <span class="close">&times</span>
-                    <h3 class="modal-text">
-                      You are agreeing to these rules if you use these loops:
-                    </h3>
-                    <ul class="modal-list">
-                      <li class="modal-list-item">
-                        You must contact me if you place any of these loops. DM me
-                        on Instagram @mongamonga_ or email me @
-                        mongamongabeats@gmail.com.
-                      </li>
-                      <li class="modal-list-item">
-                        I must be credited for anything that is uploaded/posted
-                        using these loops. This includes:
-                        <ul>
-                          <li class="modal-list-item">
-                            A collaborator on BeatStars/
-                          </li>
-                          <li class="modal-list-item">
-                            Tagged @mongamonga_ in the description wherever the
-                            beat/song gets posted
-                          </li>
-                          <li class="modal-list-item">
-                            Added as a collaborator when the song gets uploaded
-                            through a distributor. I won't take any of the revenues,
-                            I only require that I'm added as a collaborator.
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <a
-                      class="download-btn-container"
-                      href="https://www.dropbox.com/sh/ihfirqbzhkoz6rr/AABlLh5TSd-6jumD7Le6Dn6sa?dl=0"
-                      download="gorilla-hero"
-                      >Download Gorilla Hero Here
-                    </a>
-                  </div>
-                </div>
-                <!-- Modal end -->
-              </div>
-            </article>
-            <!-- Gorilla hero end -->
-            <!-- Second Chance pack begin -->
-            <article class="card second-chance">
-              <h3>Second Chance</h3>
-              <div class="img-container">
-                <img
-                  class="loop-pack-img"
-                  src="./assets/images/beat-img.jpg"
-                  alt=""
-                />
-              </div>
-              <p class="card-p">
-                Includes several loops that went viral on Tik Tok
-              </p>
-              <div class="wrapper">
-                <p class="card-p">Preview this pack:</p>
-                <div class="player">
-                  <audio
-                    class="music-player"
-                    src="./assets/audio/january.mp3"
-                  ></audio>
-                  <button class="play-button audio-controls">
-                    <ion-icon name="play-outline"></ion-icon>
-                  </button>
-                  <button class="pause-button audio-controls hidden">
-                    <ion-icon name="pause-outline"></ion-icon>
-                  </button>
-                </div>
-    
-                <button class=" btn-primary download-btn">Download</button>
-    
-                <!-- Modal -->
-                <div class="modal hidden">
-                  <div class="modal-content">
-                    <span class="close">&times</span>
-                    <h3 class="modal-text">
-                      You are agreeing to these rules if you use these loops:
-                    </h3>
-                    <ul class="modal-list">
-                      <li class="modal-list-item">
-                        You must contact me if you place any of these loops. DM me
-                        on Instagram @mongamonga_ or email me @
-                        mongamongabeats@gmail.com.
-                      </li>
-                      <li class="modal-list-item">
-                        I must be credited for anything that is uploaded/posted
-                        using these loops. This includes:
-                        <ul>
-                          <li class="modal-list-item">
-                            A collaborator on BeatStars/
-                          </li>
-                          <li class="modal-list-item">
-                            Tagged @mongamonga_ in the description wherever the
-                            beat/song gets posted
-                          </li>
-                          <li class="modal-list-item">
-                            Added as a collaborator when the song gets uploaded
-                            through a distributor. I won't take any of the revenues,
-                            I only require that I'm added as a collaborator.
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <a
-                      class="download-btn-container"
-                      href="https://www.dropbox.com/sh/ino2pomljenf4sh/AADdrBHBBjNzDo7HbtSkPiQJa?dl=0"
-                      download="second-chance"
-                      >Download Second Chance Here
-                    </a>
-                  </div>
-                </div>
-                <!-- Modal end -->
-              </div>
-            </article>
-            <!-- Production begin -->
-          </div>
-        <!--Loop section end  -->
-        </section>
-        <!--Production section begin  -->
-        <div class="section-container">
-          <section>
-            <h2>Production</h2>
-            <article class="card">
-              <h3>Songs I've Worked On</h3>
-              <div class="img-container">
-                <img
-                  class="loop-pack-img"
-                  src="./assets/images/discord-weekly-img.jpg"
-                  alt=""
-                />
-              </div>
-            </article>
-          </section>
-        </div>
+ <!-- LOOP CAROUSEL END -->
+ <div class="spacer"></div>
+ <!-- PRODUCTION CAROUSEL BEGIN -->
+ <section class="carousel-section" aria-label="Song Productions">
+  <div class="carousel">
+    <!-- next/previous buttons -->
+    <button class=" carousel-btn prev" data-carousel-prodButton="prev">
+      <ion-icon name="chevron-back-circle-outline"></ion-icon>
+     </button>
+    <button class=" carousel-btn next" data-carousel-prodButton="next">
+     <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+    </button>
+    <!-- Play/pause buttons -->
+    <button class="pause-btn  pause hidden">
+     <ion-icon  name="pause-outline"></ion-icon>
+   </button>
+    <button class=" play-btn play" data-play-prodButton="play">
+     <ion-icon name="play-circle-outline"></ion-icon>     
+   </button>
+   <!-- audio player -->
+   <audio class="prod-music-player" src=""></audio>
+    <h2 class="carousel-header">Prod</h2>
+    <ul data-prod>
+      <!-- TODO: pack class could use a better name -->
+      <li class="prod" data-active-prod="">
+        <img class="discord-weekly-pack pack-img aquarius" src="./assets/images/discord-weekly-img.jpg" alt="Loop Pack 1">
+      </li>
+      <li class="prod">
+        <img class="gorilla-hero-pack pack-img" src="./assets/images/gorilla-hero-img.jpg" alt="Loop Pack 2">
+      </li>
+      <li class="prod">
+        <img class="beat-img-pack pack-img"src="./assets/images/beat-img.jpg" alt="Loop Pack 3">
+      </li>
+    </ul>
+  </div>
+ </section>
+ <audio src="./assets/audio/prod/aquarius.mp3"></audio>
+ <!-- PRODUCTION CAROUSEL END -->
            <!-- Form begin -->
            <div class="form-wrapper">
             <h2>Let's Work</h2>
