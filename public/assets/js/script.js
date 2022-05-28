@@ -6,7 +6,8 @@ const downloadBtnEl = document.querySelector('.download-btn')
 const body = document.querySelector('.body')
 const carouselSectionEl = document.querySelector('.carousel-section')
 
-const carouselButtons = document.querySelectorAll("[data-carousel-loopButton]")
+const carouselLoopButtons = document.querySelectorAll("[data-carousel-loopButton]")
+const carouselProdButtons = document.querySelectorAll("[data-carousel-prodButton]")
 
 const closeIconEl = document.querySelector('close')
 const copyrightText = document.querySelector('.copyright')
@@ -67,7 +68,7 @@ function startProdPlayer(yaya) {
     playAudio()
 }
 
-carouselButtons.forEach(button => {
+carouselLoopButtons.forEach(button => {
     button.addEventListener('click', () => {
         console.log(button.dataset.carouselLoopbutton)
         const offset = button.dataset.carouselLoopbutton === "next" ? 1 : -1
@@ -86,6 +87,30 @@ carouselButtons.forEach(button => {
         console.log()
         packs.children[newIndex].dataset.activeloop = true
         delete activePack.dataset.activeloop
+        pauseAudio()
+    })
+})
+
+carouselProdButtons.forEach(button => {
+    console.log(`hi`)
+    button.addEventListener('click', () => {
+        console.log(button.dataset.carouselPoopbutton)
+        const offset = button.dataset.carouselPoopbutton === "next" ? 1 : -1
+        console.log(`offset`,offset)
+        const packs = button
+        .closest("[data-carousel]")
+        .querySelector("[data-prod]")
+        console.log(`Packs`, packs)
+
+        const activePack = packs.querySelector("[data-activeProd]")
+        console.log(`Active Pack`, activePack)
+        let newIndex = [...packs.children].indexOf(activePack) + offset
+        console.log(`New index`, newIndex)
+        if(newIndex < 0) newIndex = packs.children.length - 1
+        if(newIndex >= packs.children.length) newIndex = 0
+        console.log()
+        packs.children[newIndex].dataset.activeprod = true
+        delete activePack.dataset.activeprod
         pauseAudio()
     })
 })
@@ -109,7 +134,7 @@ function pauseAudio() {
     player.pause()
 }
 
-
+// Generate the Modal contents and display
 function displayModal(packDestination, packName) {
     // create the modal container
     const modalEl = document.createElement('div')
