@@ -21,6 +21,7 @@
     <header class="head">
       <!-- Hamburger -->
        <h1 >MongaMonga</h1>
+       <h4>CERTIFIED SMOKEABLE</h4>
     </header>
         <!-- Loops section begin -->
     </div>
@@ -41,7 +42,7 @@
       <ion-icon name="chevron-forward-circle-outline"></ion-icon>
      </button>
      <!-- Play/pause buttons -->
-     <button class="pause-btn  pause hidden">
+     <button class="pause-btn loop-pause  pause hidden">
       <ion-icon  name="pause-outline"></ion-icon>
     </button>
      <button class=" play-btn play" data-play-loopButton="play">
@@ -63,7 +64,7 @@
    </div>
     </section>
     <!-- LOOP CAROUSEL END -->
-    <div class="spacer"></div>
+
     <!-- PRODUCTION CAROUSEL BEGIN -->
     <section class="carousel-section" aria-label="Song Productions">
      <div class="carousel" data-carousel>
@@ -75,7 +76,7 @@
      <ion-icon name="chevron-forward-circle-outline"></ion-icon>
     </button>
     <!-- Play/pause buttons -->
-    <button class="pause-btn  pause hidden">
+    <button class="pause-btn prod-pause  pause hidden">
      <ion-icon  name="pause-outline"></ion-icon>
    </button>
     <button class=" play-btn play" data-play-prodButton="play">
@@ -111,13 +112,14 @@
          <ion-icon name="chevron-forward-circle-outline"></ion-icon>
        </button>
       <!-- Play/pause buttons -->
-        <button class="pause-btn  pause hidden">
+        <button class="pause-btn beat-pause  pause hidden">
          <ion-icon  name="pause-outline"></ion-icon>
          </button>
         <button class=" play-btn play" data-play-beatButton="play">
           <ion-icon name="play-circle-outline"></ion-icon>
         </button>
         <h2 class="carousel-header">Beats</h2>
+        <audio class="beat-music-player" src=""></audio>
 
         <ul data-beats>
           <li class="beats" data-activeBeat="">

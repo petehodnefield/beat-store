@@ -1,13 +1,14 @@
 :root {
   --white: #FFFFFFff;
-  --primary: #089cdc;
+  --primary: #23a7dc;
   --secondary: #222222;
-  --tertiary: #BBCDE5;
+  --tertiary: ghostwhite;
   --accent: #F79FC8ff;
 }
 
 * {
   box-sizing: border-box;
+  color: ghost;
 }
 html {
   font-size: 62.5%;
@@ -17,9 +18,12 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
   color: var(--white);
-  text-shadow: 0px 0px 3px var(--dark-liver);
+  text-shadow: 0px 0px 3px var(--secondary);
   font-size: 1.5rem;
   background-color: var(--tertiary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -57,13 +61,14 @@ h3 {
 header {
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;  
   justify-content: center;
   align-items: center;
 
   width: 100%;
   flex-wrap: nowrap;
+  background-color: var(--tertiary);
 }
 
 .container {
@@ -243,6 +248,7 @@ footer {
   justify-content: end;
   text-align: center;
   width: 100%;
+  background: var(--tertiary);
 }
 
 .footer-header {
@@ -265,6 +271,7 @@ footer ul, footer li {
 
 .socials {
   font-size: 45px;
+  color: black;
 }
 
 footer li {
@@ -282,10 +289,10 @@ footer li {
 
 .copyright {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-right: 3rem;
   margin-top: .4rem;
-  text-shadow: 0px 0px 1px  var(--dark-color);
+  text-shadow: 0px 0px .3px  var(--dark-color);
 
 }
 
@@ -421,10 +428,10 @@ footer li {
 
 /* Form style begin */
 .form-wrapper {
-  background-color: var(--black-coral);
+  background-color: var(--secondary);
   border-radius: 20px;
   border: 3px solid var(--carnation-pink);
-  width: 85%;
+  width: 93%;
   padding: 3rem;
 }
 .loop-request {
@@ -445,7 +452,7 @@ footer li {
 @media screen and (min-width: 768px) {
   .head {
     flex-direction: row;
-    padding: 3rem;
+    padding: 1rem;
   }
   .hamburger {
     display: none;
@@ -489,11 +496,14 @@ footer li {
 .carousel-section {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
+  background: var(--tertiary);
+  height: 100%;
 }
 .carousel {
   width: 80%;
-  border: 3px solid var(--accent);
+  border: 3px solid var(--tertiary);
   height: 50vh;
   position: relative;
   text-align: center;

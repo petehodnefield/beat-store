@@ -1,6 +1,9 @@
-const pauseButtonEl = document.querySelector(".pause-btn")
-const playButtonEl = document.querySelector("[data-play-loopButton]")
+const pauseLoopButtonEl = document.querySelector(".loop-pause")
+const pauseProdButtonEl = document.querySelector(".prod-pause")
+const pauseBeatButtonEl = document.querySelector(".beat-pause")
+const playLoopButtonEl = document.querySelector("[data-play-loopButton]")
 const playProdButtonEl = document.querySelector("[data-play-prodButton]")
+const playBeatButtonEl = document.querySelector("[data-play-beatButton]")
 const musicPlayer = document.querySelector('.music-selector')
 const downloadBtnEl = document.querySelector('.download-btn')
 const body = document.querySelector('.body')
@@ -12,64 +15,54 @@ const carouselBeatButtons = document.querySelectorAll("[data-carousel-beatButton
 
 const closeIconEl = document.querySelector('close')
 const copyrightText = document.querySelector('.copyright')
-
+let player;
 
 
 // Dynamically generate the copyright year
 const currentYear = new Date().getFullYear()
 copyrightText.textContent = `© ${currentYear} MongaMongaBeats LLC`
 
-// Play loop
-playButtonEl.addEventListener('click', () => {
+// Play LOOP Functions
+playLoopButtonEl.addEventListener('click', () => {
     let audioClip;
-    const activePack = document.querySelector("[data-active]")
+    const activePack = document.querySelector("[data-activeLoop]")
     const yaya = activePack.querySelector('.pack-img')
     if(yaya.classList.contains('gorilla-hero-pack') ){
         audioClip = `./assets/audio/ice.mp3`
-        startplayer(audioClip)
+        startLoopPlayer(audioClip)
     }
     else if(yaya.classList.contains('discord-weekly-pack') ){
         audioClip = `./assets/audio/january.mp3`
-        startplayer(audioClip)
+        startLoopPlayer(audioClip)
     }
     else if(yaya.classList.contains('beat-img-pack') ){
         audioClip = `./assets/audio/world.mp3`
-        startplayer(audioClip)
+        startLoopPlayer(audioClip)
     }
     else{
         console.log(yaya)
     }
 })
 
-playProdButtonEl.addEventListener('click', () => {
-    let audioClip;
-    const activePack = document.querySelector("[data-active-prod]")
-    console.dir(activePack)
-    const yaya = activePack.querySelector('.pack-img')
-    console.dir(yaya)
-    if(yaya.classList.contains('aquarius') ){
-        audioClip = `./assets/audio/prod/aquarius.mp3`
-        console.log('hello')
-        startProdPlayer(audioClip)
-    }
-    
-})
-function startplayer(yaya) {
+// Starts the proper music player
+function startLoopPlayer(yaya) {
     player = document.querySelector('.loop-music-player');
     player.setAttribute('src', yaya)
     console.dir(player)
     player.controls = false;
-    playAudio()
+    playLoopAudio()
 }
-function startProdPlayer(yaya) {
-    player = document.querySelector('.prod-music-player');
-    player.setAttribute('src', yaya)
-    console.dir(player)
-    player.controls = false;
-    playAudio()
-}
+function playLoopAudio(yaya) {
+    // Remove hidden from the pause button
+    pauseLoopButtonEl.classList.remove('hidden')
+    playLoopButtonEl.classList.add('hidden')
 
-// Loop carousel
+    player.play()
+    console.log($(this))
+    $(this).addClass("hidden")
+    $(this).siblings().removeClass("hidden")
+}
+// Loop Buttons Selector
 carouselLoopButtons.forEach(button => {
     button.addEventListener('click', () => {
         console.log(button.dataset.carouselLoopbutton)
@@ -84,9 +77,63 @@ carouselLoopButtons.forEach(button => {
         if(newIndex >= packs.children.length) newIndex = 0
         packs.children[newIndex].dataset.activeloop = true
         delete activePack.dataset.activeloop
-        pauseAudio()
+        pauseLoopAudio()
     })
 })
+function pauseLoopAudio() {
+    pauseLoopButtonEl.classList.add('hidden')
+    playLoopButtonEl.classList.remove('hidden')
+    player.pause()
+}
+
+// Loop audio function END
+// Play Productions Functions BEGIN
+playProdButtonEl.addEventListener('click', () => {
+    let audioClip;
+    const activePack = document.querySelector("[data-activeProd]")
+    const yaya = activePack.querySelector('.pack-img')
+    if(yaya.classList.contains('gorilla-hero-pack') ){
+        audioClip = `./assets/audio/prod/aquarius.mp3`
+        startProdPlayer(audioClip)
+    }
+    else if(yaya.classList.contains('discord-weekly-pack') ){
+        audioClip = `./assets/audio/prod/aquarius.mp3`
+        startProdPlayer(audioClip)
+    }
+    else if(yaya.classList.contains('beat-img-pack') ){
+        audioClip = `./assets/audio/prod/aquarius.mp3`
+        startProdPlayer(audioClip)
+    }
+    else{
+        console.log(yaya)
+    }
+})
+
+// Starts the proper music player
+function startProdPlayer(yaya) {
+    player = document.querySelector('.prod-music-player');
+    player.setAttribute('src', yaya)
+    console.dir(player)
+    player.controls = false;
+    playProdAudio()
+}
+function playProdAudio(yaya) {
+    console.dir(pauseProdButtonEl)
+    // Remove hidden from the pause button
+    pauseProdButtonEl.classList.remove('hidden')
+    playProdButtonEl.classList.add('hidden')
+
+    player.play()
+    console.log($(this))
+    $(this).addClass("hidden")
+    $(this).siblings().removeClass("hidden")
+}
+function pauseProdAudio() {
+    pauseProdButtonEl.classList.add('hidden')
+    playProdButtonEl.classList.remove('hidden')
+    player.pause()
+}
+
 // Prod Carousel
 carouselProdButtons.forEach(button => {
     console.log(`hi`)
@@ -102,9 +149,51 @@ carouselProdButtons.forEach(button => {
         if(newIndex >= packs.children.length) newIndex = 0
         packs.children[newIndex].dataset.activeprod = true
         delete activePack.dataset.activeprod
-        pauseAudio()
+        pauseProdAudio()
     })
 })
+
+// PROD Function END
+// BEAT Function BEGIN
+playBeatButtonEl.addEventListener('click', () => {
+    let audioClip;
+    const activePack = document.querySelector("[data-activeBeat]")
+    const yaya = activePack.querySelector('.beat-img')
+    if(yaya.classList.contains('gorilla-hero-pack') ){
+        audioClip = `./assets/audio/prod/aquarius.mp3`
+        startBeatPlayer(audioClip)
+    }
+    else if(yaya.classList.contains('discord-weekly-pack') ){
+        audioClip = `./assets/audio/prod/aquarius.mp3`
+        startBeatPlayer(audioClip)
+    }
+    else if(yaya.classList.contains('beat-img-pack') ){
+        audioClip = `./assets/audio/prod/aquarius.mp3`
+        startBeatPlayer(audioClip)
+    }
+    else{
+        console.log(yaya)
+    }
+})
+// Starts the proper music player
+function startBeatPlayer(yaya) {
+    player = document.querySelector('.beat-music-player');
+    player.setAttribute('src', yaya)
+    console.dir(player)
+    player.controls = false;
+    playBeatAudio()
+}
+function playBeatAudio(yaya) {
+    console.dir(pauseProdButtonEl)
+    // Remove hidden from the pause button
+    pauseBeatButtonEl.classList.remove('hidden')
+    playBeatButtonEl.classList.add('hidden')
+
+    player.play()
+    console.log($(this))
+    $(this).addClass("hidden")
+    $(this).siblings().removeClass("hidden")
+}
 // Beat Carousel
 carouselBeatButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -125,28 +214,18 @@ carouselBeatButtons.forEach(button => {
         console.log()
         packs.children[newIndex].dataset.activebeat = true
         delete activePack.dataset.activebeat
-        pauseAudio()
+        pauseBeatAudio()
     })
 })
 
-var player;
-
-function playAudio(yaya) {
-    // Remove hidden from the pause button
-    pauseButtonEl.classList.remove('hidden')
-    playButtonEl.classList.add('hidden')
-
-    player.play()
-    console.log($(this))
-    $(this).addClass("hidden")
-    $(this).siblings().removeClass("hidden")
-}
-
-function pauseAudio() {
-    pauseButtonEl.classList.add('hidden')
-    playButtonEl.classList.remove('hidden')
+function pauseBeatAudio() {
+    pauseBeatButtonEl.classList.add('hidden')
+    playBeatButtonEl.classList.remove('hidden')
     player.pause()
 }
+
+
+
 
 // Generate the Modal contents and display
 function displayModal(packDestination, packName) {
@@ -229,6 +308,8 @@ function obtainModalInfo() {
 }
 
 
-pauseButtonEl.addEventListener('click', pauseAudio)
+pauseLoopButtonEl.addEventListener('click', pauseLoopAudio)
+pauseProdButtonEl.addEventListener('click', pauseProdAudio)
+pauseBeatButtonEl.addEventListener('click', pauseBeatAudio)
 downloadBtnEl.addEventListener('click', obtainModalInfo)
 
