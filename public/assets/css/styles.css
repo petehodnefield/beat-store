@@ -1,12 +1,9 @@
 :root {
   --white: #FFFFFFff;
-  --cadet-grey: #9FADB9ff;
-  --black-coral: #545D64ff;
-  --dark-liver: #474244ff;
-  --blue-jeans: #48B4FFff;
-  --carnation-pink: #F79FC8ff;
-  --madder-lake: #CF3F3Fff;
-
+  --primary: #089cdc;
+  --secondary: #222222;
+  --tertiary: #BBCDE5;
+  --accent: #F79FC8ff;
 }
 
 * {
@@ -20,9 +17,9 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
   color: var(--white);
-  background-color: var(--blue-jeans);
   text-shadow: 0px 0px 3px var(--dark-liver);
   font-size: 1.5rem;
+  background-color: var(--tertiary);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,12 +51,11 @@ h3 {
 }
 
 .head {
-  background-color: var(--dark-color);
+ 
   position: relative;
 }
 header {
-  background: linear-gradient(270deg, rgba(180,224,255,1) 0%, rgba(99,190,254,1) 100%); 
-  background: rgb(180,224,255);
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;  
@@ -156,7 +152,6 @@ h1:hover {
 
 /* About me style begin */
 .section-container {
-  background-color: var(--dark-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,16 +168,6 @@ h1:hover {
 
 }
 
-.beat-img {
-  width: 50%;
-  height: auto;
-  border-radius: 100%;
-  border: 3px solid var(--white-color);
-}
-
-.beat-img:hover {
-  opacity: .9;
-}
 
 /* Button style */
 .btn {
@@ -240,7 +225,6 @@ h1:hover {
 .submit-btn {
   font-size: 3rem;
   width: 100%;
-  background-color: var(--madder-lake);
 }
 
 /* Button/Links style end */
@@ -258,7 +242,6 @@ footer {
   flex-direction: column;
   justify-content: end;
   text-align: center;
-  background-color: var(--blue-color);
   width: 100%;
 }
 
@@ -312,7 +295,7 @@ footer li {
 
 /* Modal Styling begin */ 
 .modal {
-  background-color: var(--black-coral);
+  background-color: var(--secondary);
   border-radius: 10px;
   border: 10px solid var(--white-color);
   height: 50%;
@@ -374,22 +357,7 @@ footer li {
 }
 /* card style */
 
-.card {
-  align-items: center;
-  background-color: var(--dark-liver);
-  border-radius: 20px;
-  box-shadow: 2px 2px 5px var(--five);
-  border: 3px solid var(--carnation-pink);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: nowrap;
-  margin: 2rem;
-  max-width: 85%;
-  position: relative;
-  text-align: center;
-  width: 85%;
-}
+
 
 .img-container {
   max-width: 90%;
@@ -521,17 +489,19 @@ footer li {
 .carousel-section {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 .carousel {
-  width: 90vw;
-  border: 3px solid var(--black-coral);
-  height: 100vh;
+  width: 80%;
+  border: 3px solid var(--accent);
+  height: 50vh;
   position: relative;
   text-align: center;
-  box-shadow: 0px 3px 8px black;
+  box-shadow: 3px 3px 8px var(--secondary);
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 .carousel-header {
   position: absolute;
@@ -563,6 +533,14 @@ footer li {
   transition-delay: 200ms;
   padding: 0;
 }
+.beats {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+  padding: 0;
+}
 
 .pack > img {
   display: block;
@@ -579,6 +557,13 @@ footer li {
   object-fit: cover;
   object-position: center;
 }
+.beats > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
 .pack[data-activeLoop] {
   opacity: 1;
@@ -586,6 +571,11 @@ footer li {
   transition-delay: 0;
 }
 .prod[data-activeProd] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0;
+}
+.beats[data-activeBeat] {
   opacity: 1;
   z-index: 1;
   transition-delay: 0;
@@ -665,4 +655,20 @@ footer li {
 .spacer {
   height: 200px;
   background: yellow;
+}
+
+.master-carousel-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+}
+
+@media screen and (min-width: 968px) {
+  .master-carousel-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100vw;
+  }
 }

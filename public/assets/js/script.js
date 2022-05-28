@@ -8,6 +8,7 @@ const carouselSectionEl = document.querySelector('.carousel-section')
 
 const carouselLoopButtons = document.querySelectorAll("[data-carousel-loopButton]")
 const carouselProdButtons = document.querySelectorAll("[data-carousel-prodButton]")
+const carouselBeatButtons = document.querySelectorAll("[data-carousel-beatButton]")
 
 const closeIconEl = document.querySelector('close')
 const copyrightText = document.querySelector('.copyright')
@@ -68,49 +69,62 @@ function startProdPlayer(yaya) {
     playAudio()
 }
 
+// Loop carousel
 carouselLoopButtons.forEach(button => {
     button.addEventListener('click', () => {
         console.log(button.dataset.carouselLoopbutton)
         const offset = button.dataset.carouselLoopbutton === "next" ? 1 : -1
-        console.log(`offset`,offset)
         const packs = button
         .closest("[data-carousel]")
         .querySelector("[data-packs]")
-        console.log(`Packs`, packs)
 
         const activePack = packs.querySelector("[data-activeLoop]")
-        console.log(`Active Pack`, activePack)
         let newIndex = [...packs.children].indexOf(activePack) + offset
-        console.log(`New index`, newIndex)
         if(newIndex < 0) newIndex = packs.children.length - 1
         if(newIndex >= packs.children.length) newIndex = 0
-        console.log()
         packs.children[newIndex].dataset.activeloop = true
         delete activePack.dataset.activeloop
         pauseAudio()
     })
 })
-
+// Prod Carousel
 carouselProdButtons.forEach(button => {
     console.log(`hi`)
     button.addEventListener('click', () => {
-        console.log(button.dataset.carouselPoopbutton)
         const offset = button.dataset.carouselPoopbutton === "next" ? 1 : -1
-        console.log(`offset`,offset)
         const packs = button
         .closest("[data-carousel]")
         .querySelector("[data-prod]")
-        console.log(`Packs`, packs)
 
         const activePack = packs.querySelector("[data-activeProd]")
+        let newIndex = [...packs.children].indexOf(activePack) + offset
+        if(newIndex < 0) newIndex = packs.children.length - 1
+        if(newIndex >= packs.children.length) newIndex = 0
+        packs.children[newIndex].dataset.activeprod = true
+        delete activePack.dataset.activeprod
+        pauseAudio()
+    })
+})
+// Beat Carousel
+carouselBeatButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        console.log(button.dataset.carouselBeatbutton)
+        const offset = button.dataset.carouselBeatbutton === "next" ? 1 : -1
+        console.log(`offset`,offset)
+        const packs = button
+        .closest("[data-carousel]")
+        .querySelector("[data-beats]")
+        console.log(`Packs`, packs)
+
+        const activePack = packs.querySelector("[data-activeBeat]")
         console.log(`Active Pack`, activePack)
         let newIndex = [...packs.children].indexOf(activePack) + offset
         console.log(`New index`, newIndex)
         if(newIndex < 0) newIndex = packs.children.length - 1
         if(newIndex >= packs.children.length) newIndex = 0
         console.log()
-        packs.children[newIndex].dataset.activeprod = true
-        delete activePack.dataset.activeprod
+        packs.children[newIndex].dataset.activebeat = true
+        delete activePack.dataset.activebeat
         pauseAudio()
     })
 })

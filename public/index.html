@@ -24,15 +24,15 @@
     </header>
         <!-- Loops section begin -->
     </div>
-   
- <!-- LOOOP CAROUSEL BEGIN -->
- <section class="carousel-section" aria-label="Loop Packs">
+ <section class="master-carousel-container">
+     
+    <!-- LOOOP CAROUSEL BEGIN -->
+    <section class="carousel-section" aria-label="Loop Packs">
    <div class="carousel" data-carousel>
      <!-- Loop section header -->
      <h2 class="carousel-header">Loops</h2>
      <!-- Audio element to handle audio files -->
     <audio class="loop-music-player" src=""></audio>
-
      <!-- next/previous buttons -->
      <button class=" carousel-btn prev" data-carousel-loopButton="prev">
        <ion-icon name="chevron-back-circle-outline"></ion-icon>
@@ -45,7 +45,7 @@
       <ion-icon  name="pause-outline"></ion-icon>
     </button>
      <button class=" play-btn play" data-play-loopButton="play">
-      <ion-icon name="play-circle-outline"></ion-icon>     
+      <ion-icon name="play-circle-outline"></ion-icon>
     </button>
     <!-- Download button -->
     <button class="download-btn download">Download</button>
@@ -61,12 +61,12 @@
        </li>
      </ul>
    </div>
- </section>
- <!-- LOOP CAROUSEL END -->
- <div class="spacer"></div>
- <!-- PRODUCTION CAROUSEL BEGIN -->
- <section class="carousel-section" aria-label="Song Productions">
-  <div class="carousel" data-carousel>
+    </section>
+    <!-- LOOP CAROUSEL END -->
+    <div class="spacer"></div>
+    <!-- PRODUCTION CAROUSEL BEGIN -->
+    <section class="carousel-section" aria-label="Song Productions">
+     <div class="carousel" data-carousel>
     <!-- next/previous buttons -->
     <button class=" carousel-btn prev" data-carousel-prodButton="prev">
       <ion-icon name="chevron-back-circle-outline"></ion-icon>
@@ -79,7 +79,7 @@
      <ion-icon  name="pause-outline"></ion-icon>
    </button>
     <button class=" play-btn play" data-play-prodButton="play">
-     <ion-icon name="play-circle-outline"></ion-icon>     
+     <ion-icon name="play-circle-outline"></ion-icon>
    </button>
    <!-- audio player -->
    <audio class="prod-music-player" src=""></audio>
@@ -96,10 +96,44 @@
         <img class="beat-img-pack pack-img"src="./assets/images/beat-img.jpg" alt="Loop Pack 3">
       </li>
     </ul>
-  </div>
+     </div>
+    </section>
+    <audio src="./assets/audio/prod/aquarius.mp3"></audio>
+    <!-- PRODUCTION CAROUSEL END -->
+    <!-- BEATS CAROUSEL BEGIN -->
+    <section class="carousel-section">
+      <div class="carousel" data-carousel>
+              <!-- next/previous buttons -->
+        <button class=" carousel-btn prev" data-carousel-beatButton="prev">
+          <ion-icon name="chevron-back-circle-outline"></ion-icon>
+        </button>
+       <button class=" carousel-btn next" data-carousel-beatButton="next">
+         <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+       </button>
+      <!-- Play/pause buttons -->
+        <button class="pause-btn  pause hidden">
+         <ion-icon  name="pause-outline"></ion-icon>
+         </button>
+        <button class=" play-btn play" data-play-beatButton="play">
+          <ion-icon name="play-circle-outline"></ion-icon>
+        </button>
+        <h2 class="carousel-header">Beats</h2>
+
+        <ul data-beats>
+          <li class="beats" data-activeBeat="">
+            <img  class="beat-img-pack beat-img"src="./assets/images/beat-img.jpg" alt="Beat 1">
+          </li>
+          <li class="beats">
+            <img  class="gorilla-hero-pack beat-img"src="./assets/images/discord-weekly-img.jpg" alt="Beat 2">
+          </li>
+          <li class="beats">
+            <img  class="beat-img-pack beat-img"src="./assets/images/gorilla-hero-img.jpg" alt="Beat 3">
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- BEATS CAROUSEL END -->
  </section>
- <audio src="./assets/audio/prod/aquarius.mp3"></audio>
- <!-- PRODUCTION CAROUSEL END -->
            <!-- Form begin -->
            <div class="form-wrapper">
             <h2>Let's Work</h2>
