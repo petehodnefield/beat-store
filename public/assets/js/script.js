@@ -6,11 +6,16 @@ const downloadBtnEl = document.querySelector('.download-btn')
 const body = document.querySelector('.body')
 const carouselSectionEl = document.querySelector('.carousel-section')
 
-const carouselLoopButtons = document.querySelectorAll("[data-carousel-loopButton]")
 const carouselButtons = document.querySelectorAll("[data-carousel-loopButton]")
 
 const closeIconEl = document.querySelector('close')
+const copyrightText = document.querySelector('.copyright')
 
+
+
+// Dynamically generate the copyright year
+const currentYear = new Date().getFullYear()
+copyrightText.textContent = `© ${currentYear} MongaMongaBeats LLC`
 
 // Play loop
 playButtonEl.addEventListener('click', () => {
@@ -64,18 +69,23 @@ function startProdPlayer(yaya) {
 
 carouselButtons.forEach(button => {
     button.addEventListener('click', () => {
-        const offset = button.dataset.carouselButton === "next" ? 1 : -1
+        console.log(button.dataset.carouselLoopbutton)
+        const offset = button.dataset.carouselLoopbutton === "next" ? 1 : -1
+        console.log(`offset`,offset)
         const packs = button
         .closest("[data-carousel]")
         .querySelector("[data-packs]")
+        console.log(`Packs`, packs)
 
-        const activePack = packs.querySelector("[data-active]")
+        const activePack = packs.querySelector("[data-activeLoop]")
+        console.log(`Active Pack`, activePack)
         let newIndex = [...packs.children].indexOf(activePack) + offset
+        console.log(`New index`, newIndex)
         if(newIndex < 0) newIndex = packs.children.length - 1
         if(newIndex >= packs.children.length) newIndex = 0
-
-        packs.children[newIndex].dataset.active = true
-        delete activePack.dataset.active
+        console.log()
+        packs.children[newIndex].dataset.activeloop = true
+        delete activePack.dataset.activeloop
         pauseAudio()
     })
 })
@@ -156,7 +166,7 @@ function obtainModalInfo() {
     let packDestination;
     for(let i= 0; i < siblings.length; i++) {
         let packs = siblings[i]
-        let checkForAttribute = packs.hasAttribute("data-active")
+        let checkForAttribute = packs.hasAttribute("data-activeloop")
         if(checkForAttribute) {
             const classList = siblings[i].childNodes[1].classList[0]
             if(classList === 'discord-weekly-pack') {
